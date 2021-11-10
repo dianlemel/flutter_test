@@ -23,23 +23,27 @@ class MyScreen extends StatelessWidget {
   final List<Feature> features = [
     Feature(
       color: Colors.blue,
-      data: [0.2, 0.8, 0.4, 0.7, 0.6],
+      data: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
     ),
     Feature(
       color: Colors.pink,
-      data: [1, 0.8, 0.6, 0.7, 0.3],
+      data: [0.2, 0.4, 0.6, 0.8, 1.0, 0.0],
     ),
     Feature(
       color: Colors.cyan,
-      data: [0.5, 0.4, 0.85, 0.4, 0.7],
+      data: [0.4, 0.6, 0.8, 1.0, 0.0, 0.2],
     ),
     Feature(
       color: Colors.green,
-      data: [0.6, 0.2, 0, 0.1, 1],
+      data: [0.6, 0.8, 1.0, 0.0, 0.2, 0.4],
     ),
     Feature(
       color: Colors.amber,
-      data: [0.25, 1, 0.3, 0.8, 0.6],
+      data: [0.8, 1.0, 0.0, 0.2, 0.4, 0.6],
+    ),
+    Feature(
+      color: Colors.black,
+      data: [1.0, 0.0, 0.2, 0.4, 0.6, 0.8],
     ),
   ];
 
@@ -48,14 +52,14 @@ class MyScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-          height: 500,
-          width: 700,
+          height: 800,
+          width: 1200,
           color: Colors.black12,
           alignment: Alignment.center,
-          child: LineGraph(
-            features: features,
-            labelX: const ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5'],
-            labelY: const ['20%', '40%', '60%', '80%', '100%'],
+          child: LineChar(
+            features,
+            ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5'],
+            ['20%', '40%', '60%', '80%', '100%'],
           ),
         ),
       ),
